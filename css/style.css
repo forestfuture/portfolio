@@ -238,9 +238,14 @@ li {
   font-size: 10px;
 }
 
+.works-image-wrapper{
+  display: flex;
+  justify-content: center;
+}
+
 .works-image{
-  width:290px;
-  height:211px;
+  width:150px;
+  height:300px;
   overflow: hidden;
 }
 
