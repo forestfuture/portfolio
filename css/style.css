@@ -1,4 +1,19 @@
 @charset "UTF-8";
+/*====================================================
+breakpoints
+======================================================*/
+@media screen and (max-width: 767px) {
+  .is-pc {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .is-sp {
+    display: none;
+  }
+}
+
 *,
 *:before,
 *:after {
@@ -157,15 +172,27 @@ li {
   box-shadow: 0 3px 3px -3px rgba(0, 0, 0, 0.2);
 }
 
+@media screen and (max-width: 767px) {
+  .gnav {
+    width: 75%;
+  }
+}
+
 .gnav-list {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  text-align: center;
+}
+
+@media screen and (min-width: 768px) {
+  .gnav-list {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
 }
 
 .gnav-item {
