@@ -1,5 +1,5 @@
 // PhotoSwipe
-initPhotoSwipeFromDOM(".js-my-gallery");
+// initPhotoSwipeFromDOM(".js-my-gallery");
 
 $(function () {
 
@@ -24,7 +24,7 @@ $(function () {
   $('a[href^="#"]').on("click", function () {
     var href = $(this).attr("href");
     var target = $(href == "#" || href == "" ? "html" : href);
-    var position = target.offset().top - navHeight;
+    var position = target.offset().top - 60;
     $("html, body").animate(
       {
         scrollTop: position,
@@ -46,3 +46,38 @@ $(function () {
     return false;
   });
 });
+
+// nav-toggle
+$(".nav-toggle").on("click", function(){
+  $(".gnav").toggleClass("is-open");
+})
+$(".gnav-link").on("click", function(){
+  $(".gnav").removeClass("is-open");
+})
+
+// form
+let $form = $("#js-form");
+$form.submit(function(e) { 
+    $.ajax({ 
+     url: $form.attr('action'), 
+     data: $form.serialize(), 
+     type: "POST", 
+     dataType: "xml", 
+     statusCode: { 
+        0: function() { 
+          //送信に成功したときの処理 
+          $form.slideUp();
+          $("#js-success").slideDown();
+          $(".section-lead").children().text("送信完了しました。ありがとうございます。");
+          $(".section-lead").children().css("color", "blue");
+        }, 
+        200: function() { 
+          //送信に失敗したときの処理 
+          $form.slideUp();
+          $(".section-lead").children().text("送信に失敗しました。ページを更新して再度送信してください。");
+          $(".section-lead").children().css("color", "red");
+        }
+      } 
+    });
+    return false; 
+}); 

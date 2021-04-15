@@ -23,15 +23,19 @@
 </head>
 
 <body>
+  <div class="body-bg"></div>
   <div class="wrapper">
 
     <!-- .gnav -->
     <nav class="gnav" class="fixed">
-      <button href="#" class="nav-toggle is-sp">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
+      <div class="nav-bg is-sp"></div>
+      <div class="nav-toggle is-sp">
+        <div class="nav-toggle-icon">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
       <ul class="gnav-list">
         <li class="gnav-item"><a class="gnav-link" href="#works-section">WORKS</a></li>
         <li class="gnav-item"><a class="gnav-link" href="#feature-section">FEATURE</a></li>
@@ -60,14 +64,14 @@
             <h2 class="heading-primary">WORKS</h2>
           </div>
           <div class="section-lead">
-            <p>Web（デザインとコーディング）制作の記録です。<br>デザイン練習用の架空サイト（ファーストビューのみ）も含んでおります。</p>
+            <p>Web（デザインとコーディング）制作の記録です。<br>デザイン練習用の架空サイトも含んでおります。</p>
           </div>
           <div class="section-body works">
             <div class="works-list js-my-gallery">
               <figure class="works-item">
-                <a href="img\works\Neko.png" data-size="760x950" class="works-image-wrapper works-link hover-action">
-                  <img class="works-image lazyload fadein" src="img/placeholder4x3.png" data-src="img\works\Neko.png"
-                    alt="近猫" />
+                <a href="https://forestfuture.github.io/-MakeWeb1-NeighborNeko/"
+                  class="works-image-wrapper works-link hover-action" target="_blank">
+                  <img class="works-image lazyload fadein" src="img\works\Neko.png" alt="近猫" />
                 </a>
                 <figcaption class="works-body">
                   <div class="works-title">近猫</div>
@@ -78,9 +82,9 @@
                 </figcaption>
               </figure>
               <figure class="works-item">
-                <a href="img\works/view.png" data-size="760x950" class="works-image-wrapper works-link hover-action">
-                  <img class="works-image lazyload fadein" src="img/placeholder4x3.png" data-src="img\works/view.png"
-                    alt="景色" />
+                <a href="https://forestfuture.github.io/VIEW/" class="works-image-wrapper works-link hover-action"
+                  target="_blank">
+                  <img class="works-image lazyload fadein" src="img\works/view.png" alt="景色" />
                 </a>
                 <figcaption class="works-body">
                   <div class="works-title">景色</div>
@@ -232,15 +236,15 @@
               </div>
               <div class="skill-item">
                 <div class="skill-image-wrapper">
-                  <img class="skill-image" src="img\skill\JavaScript.png" alt="js">
+                  <img class="skill-image" src="img\skill\jsjq.jpg" alt="js">
                 </div>
                 <div class="skill-body">
-                  <h3 class="skill-title">JavaScript</h3>
+                  <h3 class="skill-title">JavaScript / JQuery</h3>
                   <div class="skill-rating rating">
                     <div class="rate rate3"></div>
                   </div>
                   <p>
-                    あまり複雑なコードは書けませんが、基本的なコードは問題ありません。</p>
+                    デイトラでの練習で頻繁に使用しており、基本的なコードは問題ありません。</p>
                 </div>
               </div>
               <div class="skill-item">
@@ -256,7 +260,7 @@
                     あまり使用経験はありませんが、これから増えていくと考えられます。</p>
                 </div>
               </div>
-              <div class="skill-item">
+              <!-- <div class="skill-item">
                 <div class="skill-image-wrapper">
                   <img class="skill-image" src="img\skill\PhotoShop.png" alt="PhotoShop">
                 </div>
@@ -281,7 +285,7 @@
                   <p>
                     使用経験はありません。</p>
                 </div>
-              </div>
+              </div> -->
               <div class="skill-item">
                 <div class="skill-image-wrapper">
                   <img class="skill-image" src="img\skill\XD.png" alt="XD">
@@ -289,10 +293,10 @@
                 <div class="skill-body">
                   <h3 class="skill-title">XD</h3>
                   <div class="skill-rating rating">
-                    <div class="rate rate2"></div>
+                    <div class="rate rate3"></div>
                   </div>
                   <p>
-                    基本的な操作は問題ありません。これからもデイトラにて実践を重ねて行きたいと考えております。</p>
+                    基本的な操作や、デザインカンプからのコーディングなどに関しては問題ありません。</p>
                 </div>
               </div>
             </div>
@@ -313,21 +317,24 @@
             </p>
           </div>
           <div class="section-body contact">
-            <form>
-              <input type="email" name="email" id="email" placeholder="メールアドレス">
-              <button type="submit" class="btn btn-register">送信</button>
+            <form id="js-form"
+              action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSfbEff-rDap1TAWIvFqzu7Xf16Ukes1sAWromgS2-q_3OuJvQ/formResponse">
+              <input type="email" name="entry.866466238" id="email" placeholder="メールアドレス">
+              <input type="name" name="entry.1589728330" id="name" placeholder="お名前">
+              <textarea id="" name="entry.542189816" cols="30" rows="10" placeholder="お問い合わせ内容"></textarea>
+              <button type="submit" name="" class="btn btn-register">送信</button>
             </form>
             <ul class="contact-list">
               <li class="contact-item">
-                <a class="contact-link" href="https://twitter.com/kamishiroren020" target="_blank"><img class="contact-image"
-                    src="img/contact/icon_tw.png" alt=""></a>
+                <a class="contact-link" href="https://twitter.com/kamishiroren020" target="_blank"><img
+                    class="contact-image" src="img/contact/icon_tw.png" alt=""></a>
               </li>
               <li class="contact-item">
                 <a class="contact-link" href="https://github.com/forestfuture" target="_blank"><img
                     class="contact-image" src="./img/contact/github.png" alt=""></a>
               </li>
             </ul>
-            <div class="contact-text">forestfuture@gmail.com</div>
+            <div class="contact-text"></div>
           </div>
         </div>
       </section>

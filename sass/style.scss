@@ -48,6 +48,17 @@ body {
   color: #333;
 }
 
+.body-bg{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.507);
+  z-index: 90;
+  display: none;
+}
+
 a {
   text-decoration: none;
   color: #1ca9e3;
@@ -183,10 +194,89 @@ li {
   -webkit-box-shadow: 0 3px 3px -3px rgba(0, 0, 0, .2);
   -moz-box-shadow: 0 3px 3px -3px rgba(0, 0, 0, .2);
   box-shadow: 0 3px 3px -3px rgba(0, 0, 0, .2);
+  transition: all .3s ease 0s;
+
+  .nav-bg{
+    background-color: #fff;
+    position: fixed;
+    width: 375px;
+    height: 60px;
+    top: 0px;
+    left: 0px;
+    bottom: 0;
+  }
 
   @include mq(sp){
       width: 75%;
-  }
+      left: auto;
+      right: -282px;
+
+     .nav-toggle{
+      position: absolute;
+      left: -55px;
+      display: block;
+      height: 26px;
+      width: 50px;
+
+      .nav-toggle-icon{
+
+        span{
+          display: block;
+          width: 30px;
+          height: 5px;
+          background: #000;
+          border-radius: 20px;
+          position: absolute;
+          transition: all .3s ease .3s;
+
+          &:first-child{
+            top: 0;
+          }
+
+          &:nth-child(2){
+            top: 50%;
+            transform: translateY(-50%);
+          }
+
+          &:last-child{
+            bottom: 0;
+          }
+        }  
+      }
+    }
+
+    &.is-open{
+      right: 0;
+
+      .nav-bg{
+        left: -280px;
+        transition: all .3s ease;
+      }
+
+      .nav-toggle{
+
+        .nav-toggle-icon{
+          
+          span{
+
+            &:first-child{
+              transform: rotate(45deg);
+              top: 11px;
+            }
+
+            &:nth-child(2){
+              opacity: 0;
+            }
+
+            &:last-child{
+              transform: rotate(-45deg);
+              bottom: 10px;
+            }
+          }
+        }  
+      }
+    }   
+  }    
 }
 
 .gnav-list {
@@ -197,6 +287,10 @@ li {
         justify-content: center;
         flex-wrap: wrap;    
     }  
+
+    @include mq(sp){
+      padding: 50px 0;
+    }
 }
 
 .gnav-item {
@@ -204,6 +298,13 @@ li {
   font-size: 16px;
   padding: 0 24px;
   letter-spacing: .05em;
+
+  @include mq(sp){
+
+    &:not(:first-child){
+      padding-top: 30px;
+    }
+  }
 }
 
 .gnav-link {
@@ -241,6 +342,10 @@ li {
 .ios .gnav-link:hover:after {
   display: none;
 }
+
+/* bg */ 
+
+
 
 /*--------------------------------
  Works
@@ -471,12 +576,23 @@ form{
 
 }
 
-input[type="email"]{
+input[type="email"],
+[type="name"]{
   display: block;
   margin:0 auto;
   width: 70%;
   padding: 10px 5px;
   border-radius: 100px;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+textarea{
+  display: block;
+  margin:0 auto;
+  width: 70%;
+  padding: 10px 5px;
+  border-radius: 10px;
 }
 
 .btn{
@@ -561,7 +677,7 @@ input[type="email"]{
 
   /* レイアウト */
   .wrapper {
-    padding-top: 82px;
+    padding-top: 60px;
   }
 
   .section {
@@ -598,6 +714,10 @@ input[type="email"]{
 
   .gnav-link {
     padding: 0;
+
+    @include mq(sp){
+      padding: 20px;  
+    }
   }
 
   .gnav-link:hover {
