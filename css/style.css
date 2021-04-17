@@ -143,9 +143,9 @@ li {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  background-image: url("../img/header.jpg");
-  background-size: cover;
-  height: 86vh;
+  background: url(../img/header.jpg) center center/cover;
+  background-attachment: fixed;
+  height: 91vh;
 }
 
 .logo {
