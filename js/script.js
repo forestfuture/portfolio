@@ -50,9 +50,18 @@ $(function () {
 // nav-toggle
 $(".nav-toggle").on("click", function(){
   $(".gnav").toggleClass("is-open");
+  $(".body-bg").toggleClass("bg-open");
+
+  if($(".gnav").hasClass("is-open")){
+    $("body").css("overflow", "hidden");
+  }else{
+    $("body").css("overflow", "auto");
+  }
 })
 $(".gnav-link").on("click", function(){
   $(".gnav").removeClass("is-open");
+  $("body").css("overflow", "auto");
+  $(".body-bg").removeClass("bg-open");
 })
 
 // form
