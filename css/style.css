@@ -656,6 +656,9 @@ textarea {
   color: #8c8c8c;
 }
 
+/*--------------------------------
+page-top
+---------------------------------*/
 .page-top {
   font-size: 12px;
   font-weight: bold;
@@ -664,6 +667,12 @@ textarea {
   cursor: pointer;
   text-align: center;
   background-color: #ccc;
+  position: fixed;
+  bottom: -50px;
+  right: 10px;
+  -webkit-transition: bottom .3s ease 0s;
+  transition: bottom .3s ease 0s;
+  border-radius: 10px;
 }
 
 /*media Queries 767

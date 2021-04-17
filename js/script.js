@@ -45,34 +45,42 @@ $(function () {
     );
     return false;
   });
-});
 
-// nav-toggle
-$(".nav-toggle").on("click", function(){
-  $(".gnav").toggleClass("is-open");
-  $(".body-bg").toggleClass("bg-open");
+  // ページトップ表示
+  $(window).on("scroll", function(){
+    if(200 < $(this).scrollTop()){
+      $(".page-top").css("bottom", "10px");
+    }else{
+      $(".page-top").css("bottom", "-50px");
+    }
+  })
 
-  if($(".gnav").hasClass("is-open")){
-    $("body").css("overflow", "hidden");
-  }else{
+  // nav-toggle
+  $(".nav-toggle").on("click", function(){
+    $(".gnav").toggleClass("is-open");
+    $(".body-bg").toggleClass("bg-open");
+
+    if($(".gnav").hasClass("is-open")){
+      $("body").css("overflow", "hidden");
+    }else{
+      $("body").css("overflow", "auto");
+    }
+  })
+  $(".gnav-link").on("click", function(){
+    $(".gnav").removeClass("is-open");
     $("body").css("overflow", "auto");
-  }
-})
-$(".gnav-link").on("click", function(){
-  $(".gnav").removeClass("is-open");
-  $("body").css("overflow", "auto");
-  $(".body-bg").removeClass("bg-open");
-})
+    $(".body-bg").removeClass("bg-open");
+  })
 
-// form
-let $form = $("#js-form");
-$form.submit(function(e) { 
+  // form
+  let $form = $("#js-form");
+  $form.submit(function(e) { 
     $.ajax({ 
-     url: $form.attr('action'), 
-     data: $form.serialize(), 
-     type: "POST", 
-     dataType: "xml", 
-     statusCode: { 
+      url: $form.attr('action'), 
+      data: $form.serialize(), 
+      type: "POST", 
+      dataType: "xml", 
+      statusCode: { 
         0: function() { 
           //送信に成功したときの処理 
           $form.slideUp();
@@ -89,4 +97,6 @@ $form.submit(function(e) {
       } 
     });
     return false; 
-}); 
+  }); 
+
+});
