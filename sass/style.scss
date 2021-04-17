@@ -370,6 +370,8 @@ li {
   margin-right: 0;
 }
 
+
+
 .works-body {
   text-align: center;
 }
@@ -386,16 +388,44 @@ li {
 
 .works-url {
   font-size: 10px;
+
+  .works-url-link{
+    color: #333;
+    font-weight: bold;
+    position: relative;
+    display: inline-block;
+    padding: 10px;
+
+  &::after{
+    content: "";
+    background: #333;
+    width: 50px;
+    height: 1px;
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: width .3s ease 0s;
+  }
+
+  &:hover{
+    &::after{
+      width: 80px;
+    }
+  }
+  }
 }
 
 .works-image-wrapper{
-  display: flex;
+  display: block;
   justify-content: center;
+  height: 300px;
+  overflow: hidden;
 }
 
 .works-image{
-  width:150px;
-  height:300px;
+  // width:150px;
+  // height:300px;
   overflow: hidden;
 }
 

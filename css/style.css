@@ -372,18 +372,42 @@ li {
   font-size: 10px;
 }
 
+.works-url .works-url-link {
+  color: #333;
+  font-weight: bold;
+  position: relative;
+  display: inline-block;
+  padding: 10px;
+}
+
+.works-url .works-url-link::after {
+  content: "";
+  background: #333;
+  width: 50px;
+  height: 1px;
+  position: absolute;
+  bottom: 0px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  -webkit-transition: width .3s ease 0s;
+  transition: width .3s ease 0s;
+}
+
+.works-url .works-url-link:hover::after {
+  width: 80px;
+}
+
 .works-image-wrapper {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: block;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  height: 300px;
+  overflow: hidden;
 }
 
 .works-image {
-  width: 150px;
-  height: 300px;
   overflow: hidden;
 }
 
