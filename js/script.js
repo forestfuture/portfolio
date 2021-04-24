@@ -49,7 +49,7 @@ $(function () {
   // ページトップ表示
   $(window).on("scroll", function(){
     if(200 < $(this).scrollTop()){
-      $(".page-top").css("bottom", "10px");
+      $(".page-top").css("bottom", "0px");
     }else{
       $(".page-top").css("bottom", "-50px");
     }

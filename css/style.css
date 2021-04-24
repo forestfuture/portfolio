@@ -672,6 +672,7 @@ textarea {
 
 .footer .inner {
   padding: 30px;
+  margin-bottom: 20px;
 }
 
 .copyright {
@@ -687,16 +688,15 @@ page-top
   font-size: 12px;
   font-weight: bold;
   display: block;
-  padding: 10px;
+  width: 100%;
+  padding: .5em;
   cursor: pointer;
   text-align: center;
   background-color: #ccc;
   position: fixed;
   bottom: -50px;
-  right: 10px;
   -webkit-transition: bottom .3s ease 0s;
   transition: bottom .3s ease 0s;
-  border-radius: 10px;
 }
 
 /*media Queries 767
@@ -742,6 +742,7 @@ page-top
   /* ヘッダー */
   .header {
     height: 70vh;
+    background-attachment: unset;
   }
   .logo-title {
     font-size: 28px;
@@ -863,5 +864,6 @@ page-top
   /* フッター */
   .footer .inner {
     padding: 20px 0;
+    margin-bottom: 20px;
   }
 }
